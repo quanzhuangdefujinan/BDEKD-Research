@@ -75,12 +75,12 @@ This repository provides the core implementation (`main.py`), excluding backdoor
 ## Notes
 
 - **Excluded Components**: Backdoor models and datasets (e.g., SST-2, HS, OLID2, AG News) are not included, as they are not essential for reproducing the BDEKD purification process. Users must provide their own clean data and, if desired, poisoned models for evaluation.
-- **Model Architecture**: The code uses BERT-base-uncased by default, consistent with the paper’s victim model (Section 4.1.2). Modify `model_name` in `main.py` for other architectures (e.g., BERT-large), ensuring structural similarity (Section 4.3.2).
+- **Model Architecture**: The code uses BERT-base-uncased by default, consistent with the paper’s victim model. Modify `model_name` in `main.py` for other architectures (e.g., BERT-large), ensuring structural similarity.
 - **Hyperparameters**:
-  - Fine-tuning: Learning rate 0.1, halved every 2 epochs (Appendix B, Page 33).
-  - Re-initialization: Layers 7–11 for BERT-base (Appendix B).
-  - Fine-pruning: Threshold 0.7 (Appendix C, Page 34).
-  - Distillation: Alpha=0.5, beta=0.5, temperature=2.0 (Section 3.3.3).
+  - Fine-tuning: Learning rate 0.1, halved every 2 epochs.
+  - Re-initialization: Layers 7–11 for BERT-base.
+  - Fine-pruning: Threshold 0.7.
+  - Distillation: Alpha=0.5, beta=0.5, temperature=2.0.
 - **Dependencies**: Listed in `requirements.txt`. Ensure a CUDA-enabled GPU for optimal performance, though CPU is supported.
 - **Limitations**: The code assumes a binary classification task (e.g., SST-2). For multi-class tasks (e.g., AG News), adjust the `num_labels` parameter in model initialization.
 
@@ -99,4 +99,4 @@ If you use this code, please cite our paper:
 
 ## Contact
 
-For questions or issues, please open a GitHub issue or contact [your_email@example.com].
+For questions or issues, please open a GitHub issue or contact [jiejie20001007@163.com].
